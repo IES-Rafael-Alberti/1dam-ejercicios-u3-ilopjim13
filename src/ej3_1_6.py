@@ -24,7 +24,7 @@ def borrarAprobadas(asignaturas):
         a -=1
 
 
-def aprobar(asignaturas):
+def repetir(asignaturas):
     a = 0
     print("\nTienes que repetir:")
     for i in asignaturas:
@@ -32,13 +32,12 @@ def aprobar(asignaturas):
         a +=1
 
 
-
 def main():
     borrarPantalla()
     asignaturas = [["Matemáticas", 0],["Física", 0],["Química", 0],["Historia", 0],["Lengua", 0]]
     pedirNota(asignaturas)
     borrarAprobadas(asignaturas)
-    aprobar(asignaturas)
+    repetir(asignaturas)
 
 if __name__ == "__main__":
     main()

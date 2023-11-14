@@ -50,12 +50,8 @@ def ordenarLista(numeros):
     return numeros
 
 
-def listaLoteria():
-    numeros = []
-    pedirNumero(numeros)
-    ordenarLista(numeros)
+def MostrarLoteria(numeros):
     num = numeros[0:6]
-    pedirReintegro(numeros)
     num2 = numeros[6:7]
     print("\nTus numeros son: ", end="")
     print(" ".join(map(str,num)))
@@ -65,9 +61,13 @@ def listaLoteria():
 
 
 def main():
+    numeros = []
     borrarPantalla()
     print("Introduce los números de la lotería: ")
-    listaLoteria()
+    pedirNumero(numeros)
+    ordenarLista(numeros)
+    pedirReintegro(numeros)
+    MostrarLoteria(numeros)
 
 if __name__ == "__main__":
     main()

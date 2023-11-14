@@ -2,7 +2,7 @@
 from borrarPantalla import borrarPantalla
 
 
-def ordenarLista(lista):
+def listaMayorMenor(lista):
     rango = 0
     mayor = 0
     for i in range(0, len(lista)-1):
@@ -14,10 +14,11 @@ def ordenarLista(lista):
     print("El numero mayor es: " , mayor)
     print("El numero menor es: " , menor)
 
+
 def main():
     borrarPantalla()
     lista = [50, 75, 46, 22, 80, 65, 8]
-    ordenarLista(lista)
+    listaMayorMenor(lista)
 
 
 if __name__ == "__main__":

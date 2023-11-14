@@ -2,8 +2,11 @@
 from borrarPantalla import borrarPantalla
 
 def ordenInverso(lista: list):
-    lista.reverse()
+    lista2 = lista.copy()
+    lista2.reverse()
+    print(", ".join(map(str, lista2)))
     print(", ".join(map(str, lista)))
+    
 
 
 
