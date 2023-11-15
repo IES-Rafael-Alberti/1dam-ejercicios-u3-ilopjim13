@@ -8,19 +8,19 @@ def mostrarProducto(matriz1, matriz2):
             matriz3 = matriz1[i][j] * matriz2[i][j]
             print(f"{matriz1[i][j]} x {matriz2[i][j]} = {matriz3}")
 
-def producto(matriz1, matriz2):
+def productoLista(matriz1, matriz2):
     return tuple(matriz1[i] * matriz2[i] for i in range(len(matriz1)))
 
 
-def producto2(matriz1, matriz2):
-    return tuple(producto(matriz1[i], matriz2[i]) for i in range(len(matriz1)))
+def producto(matriz1, matriz2):
+    return tuple(productoLista(matriz1[i], matriz2[i]) for i in range(len(matriz1)))
 
 
 def main():
     borrarPantalla()
     matriz1= ((1,2), (3,4), (5,6))
     matriz2 = ((-1,0), (0,1), (1,1))
-    matriz3 = producto2(matriz1, matriz2)
+    matriz3 = producto(matriz1, matriz2)
     mostrarProducto(matriz1, matriz2)
     print("\n El producto de estas dos matrices es: ")
     print(f"((1,2), (3,4), (5,6)) x ((-1,0), (0,1), (1,1)) = {matriz3}")
