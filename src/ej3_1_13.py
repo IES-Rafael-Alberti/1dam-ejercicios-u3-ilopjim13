@@ -3,8 +3,7 @@ from borrarPantalla import borrarPantalla
 import statistics
 
 def pedirNumeros():
-    return input("Introduce números separados por coma: ")
-    
+    return input("Introduce números separados por coma: ")    
 
 
 def listas(num):
@@ -20,11 +19,11 @@ def media_y_Desviacion(lista2):
     print(f"La media es de: {round(media,2)}")
     print(f"La desviación es de: {round(desviacion,2)}")
 
+
 def main():
     borrarPantalla()
     num = pedirNumeros()
-    listas(num)
-    
+    listas(num)    
 
 
 if __name__ == "__main__":
