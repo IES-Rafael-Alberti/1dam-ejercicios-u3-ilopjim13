@@ -22,7 +22,7 @@ def main():
     matriz2 = ((-1,0), (0,1), (1,1))
     matriz3 = producto(matriz1, matriz2)
     mostrarProducto(matriz1, matriz2)
-    print("\n El producto de estas dos matrices es: ")
+    print("\nEl producto de estas dos matrices es: ")
     print(f"((1,2), (3,4), (5,6)) x ((-1,0), (0,1), (1,1)) = {matriz3}")
 
 if __name__ == "__main__":
