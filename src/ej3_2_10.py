@@ -14,7 +14,7 @@ from borrarPantalla import borrarPantalla
 
 
 def anadirCliente(clientes):
-    clientes[input("Introduce el NIF del nuevo cliente: ")] = dict({"Nombre":input("Introduce su nombre: "), "Direccion":input("Su direccion: "), "Telefono":input("Su telefono: "), "Correo":input("Su correo: "), "Preferente":bool(input("Preferente (True/Flase): "))})
+    clientes[input("Introduce el NIF del nuevo cliente: ")] = dict({"Nombre":input("Introduce su nombre: "), "Direccion":input("Su direccion: "), "Telefono":input("Su telefono: "), "Correo":input("Su correo: "), "Preferente":bool(input("Preferente (True/False): "))})
 
 
 def eliminarCliente(clientes):

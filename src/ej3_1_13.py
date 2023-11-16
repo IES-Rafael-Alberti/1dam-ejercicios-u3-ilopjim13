@@ -7,23 +7,32 @@ def pedirNumeros():
 
 
 def listas(num):
-    lista = num.split(",")
-    lista2 = [int(i) for i in lista]
-    print(lista2)
-    media_y_Desviacion(lista2)
+    listastr = num.split(",")
+    listaint = [int(i) for i in listastr]
+    print(listaint)
+    return listaint
 
 
-def media_y_Desviacion(lista2):
-    media = statistics.mean(lista2)
-    desviacion = statistics.stdev(lista2)
+def media(listaint):
+    suma = 0
+    division = len(listaint)
+    for i in listaint:
+        suma += i
+    media = suma / division
     print(f"La media es de: {round(media,2)}")
+
+
+def desviacion(listaint):
+    desviacion = statistics.stdev(listaint)
     print(f"La desviación es de: {round(desviacion,2)}")
 
 
 def main():
     borrarPantalla()
     num = pedirNumeros()
-    listas(num)    
+    listaint = listas(num)
+    media(listaint)
+    desviacion(listaint)
 
 
 if __name__ == "__main__":

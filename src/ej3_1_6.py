@@ -5,23 +5,20 @@ from borrarPantalla import borrarPantalla
 def pedirNota(asignaturas):
     a = 0
     for i in asignaturas:
-        print(f"Introduce la nota de {asignaturas[a][0]}:")
-        nota = int(input())
+        nota = int(input(f"Introduce la nota de {asignaturas[a][0]}: "))
         while nota < 0 or nota > 10:
             print("**ERROR** la nota debe ser entre 0 y 10")
-            nota = int(input())
+            nota = int(input(f"Introduce la nota de {asignaturas[a][0]}: "))
         else: 
             asignaturas[a][1] = nota
         a +=1
 
 
 def borrarAprobadas(asignaturas):
-    a = len(asignaturas) -1
-    o = len(asignaturas)
-    for i in range(o-1, -1, -1):
-        if asignaturas[a][1] >= 5:
-            del asignaturas[a]
-        a -=1
+    for i in range(len(asignaturas) -1, -1, -1):
+        if asignaturas[i][1] >= 5:
+            del asignaturas[i]
+
 
 
 def repetir(asignaturas):

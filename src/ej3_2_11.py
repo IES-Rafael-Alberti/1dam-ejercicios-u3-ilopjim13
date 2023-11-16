@@ -13,3 +13,38 @@ nombres de los campos y como valores la información de cada cliente correspondi
 'Macarena Ramírez', 'email': 'macarena@mail.com', 'teléfono': '692839321', 'descuento': 8.0}, '63823376M': {'nombre': 'Juan José Martínez', 'email': 
 'juanjo@mail.com', 'teléfono': '664888233', 'descuento': 5.2}, '98376547F': {'nombre': 'Carmen Sánchez', 'email': 'carmen@mail.com', 'teléfono': 
 '667677855', 'descuento': 15.7}}"""
+from borrarPantalla import borrarPantalla
+
+
+def listaDirectorio(directorio:str):
+    lista = directorio.split("\n")
+    return lista
+
+
+def diccionario(lista):
+    directorioDict = {}
+    for i in range(1,len(lista)):
+        lista4 = lista[0]
+        lista5 = lista4.split(";")
+        lista3 = lista[i]
+        lista2 = lista3.split(";")
+        numerosFloat(lista2)
+        directorioDict[lista2[0]] = {lista5[1]:lista2[1], lista5[2]:lista2[2], lista5[3]:lista2[3],lista5[4]:lista2[4]}
+    print(directorioDict)
+
+
+def numerosFloat(lista2):
+    num = lista2[4]
+    num2 = float(num)
+    lista2[4] = num2
+
+
+def main():
+    borrarPantalla()
+    directorio = "nif;nombre;email;teléfono;descuento\n01234567L;Luis González;luisgonzalez@mail.com;656343576;12.5\n71476342J;Macarena Ramírez;macarena@mail.com;692839321;8\n63823376M;Juan José Martínez;juanjo@mail.com;664888233;5.2\n98376547F;Carmen Sánchez;carmen@mail.com;667677855;15.7"
+    lista = listaDirectorio(directorio)
+    diccionario(lista)
+
+
+if __name__ == "__main__":
+    main()

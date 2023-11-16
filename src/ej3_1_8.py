@@ -5,9 +5,7 @@ def pedirPalabra():
     return input("Introduce una palabra: ")
 
 
-def main():
-    borrarPantalla()
-    palabra = pedirPalabra()
+def palabraReves(palabra):
     palabraOriginal = list(palabra)
     palabraReversa = list(palabra)
     palabraReversa.reverse()
@@ -16,6 +14,13 @@ def main():
     else:
         print("Esta palabra no es un políndromo")
 
+
+
+def main():
+    borrarPantalla()
+    palabra = pedirPalabra()
+    palabraReves(palabra)
+    
 
 if __name__ == "__main__":
     main()

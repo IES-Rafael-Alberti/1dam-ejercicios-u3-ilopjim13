@@ -16,7 +16,7 @@ def contarVocales(palabra:tuple) -> tuple:
 
 
 def mostrarVocales(vocales):
-    for i in range(0,len(vocales)-1):
+    for i in range(0,len(vocales)):
         print(f"{vocales[i][0]} = {vocales[i][1]}")
 
 

@@ -6,8 +6,7 @@ def pedirNota(asignaturas):
     a = 0
     while a < len(asignaturas):
         try:
-            print(f"Introduce la nota de {asignaturas[a][0]}:")
-            nota = int(input())
+            nota = int(input(f"Introduce la nota de {asignaturas[a][0]}: "))
         except ValueError:
             print("**ERROR** la nota debe ser entre 0 y 10")
         else: 
