@@ -5,9 +5,7 @@ def ordenInverso(lista: list):
     lista2 = lista.copy()
     lista2.reverse()
     print(", ".join(map(str, lista2)))
-    print(", ".join(map(str, lista)))
-    
-
+    print(", ".join(map(str, lista)))    
 
 
 def main():
