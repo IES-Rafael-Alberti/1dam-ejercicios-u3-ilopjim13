@@ -14,21 +14,35 @@ from borrarPantalla import borrarPantalla
 
 
 def anadirCliente(clientes):
+    borrarPantalla()
     clientes[input("Introduce el NIF del nuevo cliente: ")] = dict({"Nombre":input("Introduce su nombre: "), "Direccion":input("Su direccion: "), "Telefono":input("Su telefono: "), "Correo":input("Su correo: "), "Preferente":bool(input("Preferente (True/False): "))})
 
 
 def eliminarCliente(clientes):
-    clientes.pop(input("Escriba el NIF del clienten que desea eliminar: "))
+    borrarPantalla()
+    quitar = "N"
+    try:
+        nif = input("Escriba el NIF del cliente que desea eliminar: ")
+        while quitar != "s":
+            quitar = input(f"¿Seguro que quieres eliminar el cliente con el NIF {nif}? (s/n) ").upper
+            if quitar != "s":
+                nif = input("Escriba el NIF del cliente que desea eliminar: ")
+        clientes.pop(nif)
+    except KeyError:
+        print("No existe este cliente")
+    input("\nPresione ENTER para volver al menu")
 
 
 def mostrarCliente(clientes):
+    borrarPantalla()
     try:
         nif = input("Introduce el NIF del cliente que quiere ver sus datos: ")
+        print("\nSus datos son: ")
         for i in clientes[nif]:
-            print(clientes[nif][i])
+            print(f"- {i}: {clientes[nif][i]}")
     except KeyError:
         print("No existe ningun cliente con ese NIF")
-    input("Presione ENTER para volver al menu")
+    input("\nPresione ENTER para volver al menu")
 
 
 def listarClientes(clientes):
@@ -59,8 +73,8 @@ def menuOpciones(clientes):
     opcion = 1
     while opcion != 6:
         borrarPantalla()
-        print("\n¿Qué quieres hacer?\n1) Añadir cliente\n2) Eliminar cliente\n3) Mostrar clientes\n4) Listar todos los clientes\n5) Listar clientes preferentes\n6) Terminar")
-        opcion = int(input("Eliga --> "))
+        print("\n¿Qué quieres hacer?\n\n1) Añadir cliente\n2) Eliminar cliente\n3) Mostrar cliente\n4) Listar todos los clientes\n5) Listar clientes preferentes\n6) Terminar")
+        opcion = int(input("\nEliga --> "))
         if opcion == 1:
             anadirCliente(clientes)
         if opcion == 2:
