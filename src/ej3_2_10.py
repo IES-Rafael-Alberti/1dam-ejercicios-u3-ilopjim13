@@ -24,7 +24,7 @@ def eliminarCliente(clientes):
     try:
         nif = input("Escriba el NIF del cliente que desea eliminar: ")
         while quitar != "s":
-            quitar = input(f"¿Seguro que quieres eliminar el cliente con el NIF {nif}? (s/n) ").upper
+            quitar = input(f"¿Seguro que quieres eliminar el cliente con el NIF {nif}? (s/n) ")
             if quitar != "s":
                 nif = input("Escriba el NIF del cliente que desea eliminar: ")
         clientes.pop(nif)
