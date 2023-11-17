@@ -105,7 +105,9 @@ def comprobar_casilla(tablero: tuple, pos_ficha: dict) -> bool:
 
 def verificar_ganador(tablero) -> tuple:
     """ Comprobar si algun jugador ha ganado. """
-    
+    for i in range(len(tablero)):
+        for j in range(len(tablero)):
+            print(tablero[i][j])
     
 
 def jugar(tablero: tuple):
@@ -129,8 +131,8 @@ def jugar(tablero: tuple):
         if ronda >= 3:
             ganador, hay_ganador = verificar_ganador(tablero)
 
-    if hay_ganador:
-        print(f"\n¡El jugador {ganador} ha ganado!\n")
+        if hay_ganador:
+            print(f"\n¡El jugador {ganador} ha ganado!\n")
 
         if ronda == 9:
             hay_ganador = True
