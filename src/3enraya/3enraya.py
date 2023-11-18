@@ -106,9 +106,24 @@ def comprobar_casilla(tablero: tuple, pos_ficha: dict) -> bool:
 def verificar_ganador(tablero) -> tuple:
     """ Comprobar si algun jugador ha ganado. """
     for i in range(len(tablero)):
-        for j in range(len(tablero)):
-            print(tablero[i][j])
-    
+        if tablero[0][i] == 1 and tablero[1][i] == 1 and tablero[2][i] == 1:
+            return "1", True
+        if tablero[0][i] == 2 and tablero[1][i] == 2 and tablero[2][i] == 2:
+            return "2", True
+        if tablero[i][0] == 1 and tablero[i][1] == 1 and tablero[i][2] == 1:
+            return "1", True
+        if tablero[i][0] == 2 and tablero[i][1] == 2 and tablero[i][2] == 2:
+            return "2", True
+    if tablero[0][0] == 1 and tablero[1][1] == 1 and tablero[2][2] == 1:
+        return "1", True
+    if tablero[0][2] == 1 and tablero[1][1] == 1 and tablero[2][0] == 1:
+        return "1", True
+    if tablero[0][2] == 2 and tablero[1][1] == 2 and tablero[2][0] == 2:
+        return "2", True
+    if tablero[0][0] == 2 and tablero[1][1] == 2 and tablero[2][2] == 2:
+        return "2", True
+    return "",False
+
 
 def jugar(tablero: tuple):
     
