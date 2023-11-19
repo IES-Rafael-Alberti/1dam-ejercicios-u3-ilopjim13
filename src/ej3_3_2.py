@@ -22,7 +22,7 @@ def mostrar_repetidos(primaria, secundaria):
 
 
 def mostrar_no_repetidos_nivel2(primaria, secundaria):
-    mostrar = primaria ^ secundaria
+    mostrar = primaria - secundaria
     mostrar = (", ".join(mostrar))
     print(f"- Los nombres de primaria que no se repiten en secundaria son: {mostrar}.")
 
