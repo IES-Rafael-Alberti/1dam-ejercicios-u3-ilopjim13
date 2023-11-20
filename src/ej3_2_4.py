@@ -14,6 +14,8 @@ def mostrarFecha(meses,lista):
         print("-- ERROR --")
     elif int(lista[2]) < 0 or int(lista[2]) > 3000:
         print("-- ERROR --")
+    elif int(lista[1]) < 0 or int(lista[1]) > 12:
+        print("-- ERROR --")
     else:
         print(f"{lista[0]} de {meses[lista[1]]} de {lista[2]}")
 

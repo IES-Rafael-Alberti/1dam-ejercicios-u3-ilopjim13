@@ -3,7 +3,7 @@ from borrarPantalla import borrarPantalla
 
 
 def cestaCompra(cesta):
-    articulo = input("Introduce un articulo: ").capitalize
+    articulo = input("Introduce un articulo: ")
     while articulo != "*":
         try:
             cesta[articulo] = int(input("Introduce su precio: "))

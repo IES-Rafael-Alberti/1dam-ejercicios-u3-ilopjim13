@@ -17,17 +17,53 @@ def pedirConjunto():
     return s
 
 
+def sector1():
+    entrada = {1,2,3}
+    conjunto = list()
+    todo = len(entrada) * 2 + 2
+    for i in range(todo):
+        conjunto.append(set(str(i)))
+    print(conjunto)
+
+
+def numeros():
+    entrada = {1,2,3}
+    conjunto = list()
+    cont = 1
+    for j in entrada:
+        for i in range(cont):
+            numero = j
+        conjunto.append(set(str(numero)))
+        cont += 1
+    print(conjunto)
+    dos_en_Dos(conjunto)
+
+
+def dos_en_Dos(conjunto:list):
+    entrada = {1,2,3}
+    cont = 1
+    for j in entrada:
+        for i in range(cont):
+            numero = j
+            numero2 = j + 1
+        conjunto.append(set(str(numero)))
+        cont += 1
+    print(conjunto)
+
+
 #def conjunto_potencia(s):
 
 
 
 def main():
     borrarPantalla()
-    conjunto = [set(), set([6]), set([1]), set([4]), set([6, 1]), set([6, 4]), set([1, 4]), set([6, 1, 4])]
-    s = pedirConjunto()
-    print('({6, 1, 4})')
-    print(s)
-    print(conjunto)
+    numeros()
+    # sector1()
+    # conjunto = [set(), set([6]), set([1]), set([4]), set([6, 1]), set([6, 4]), set([1, 4]), set([6, 1, 4])]
+    # s = pedirConjunto()
+    # print('({6, 1, 4})')
+    # print(s)
+    # print(conjunto)
 
 
 if __name__ == "__main__":
