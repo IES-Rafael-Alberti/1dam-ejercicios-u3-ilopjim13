@@ -10,60 +10,48 @@ conjunto_potencia({6, 1, 4})
 from borrarPantalla import borrarPantalla
 
 
-def pedirConjunto():
-    num = input("Introduce el conjunto de potencias (ej: 1,2,3): ")
-    lista = num.split(",")
-    s = set(lista)
-    return s
+# TODO: Declara la función conjunto_potencia según la documentación que observas a continuación:
+def conjunto_potencia(conjunto_original: set) -> list:
+    """ Genera la lista de todos los subconjuntos posibles de un conjunto
+    :param conjunto_original: conjunto del que debemos realizar la lista del conjunto potencia
+    :type conjunto_original: set
+    :returns: la lista del conjunto potencia resultante
+    :rtype: list
+    """
+    # TODO: Inicializar la lista potencia con el conjunto vacío:
+    lista_potencia = [set()]
 
+    # TODO: Recorrer los elementos del conjunto original:
+    for elemento in conjunto_original:
 
-def sector1():
-    entrada = {1,2,3}
-    conjunto = list()
-    todo = len(entrada) * 2 + 2
-    for i in range(todo):
-        conjunto.append(set(str(i)))
-    print(conjunto)
+        # Explicación de qué vamos a hacer en el bucle:
+        # Crear nuevos subconjuntos agregando el elemento actual a los subconjuntos 
+        # existentes en la lista potencia mediante la operación de unión entre el 
+        # elemento del conjunto original y cada subconjunto de la lista potencia.
 
+        # TODO: Primero creamos una lista vacía que se llame nuevos_subconjuntos:
+        nuevos_subconjuntos = []
+        # TODO: Ahora recorremos los subconjuntos de la lista potencia:
+        for subconjunto in lista_potencia:
+            # TODO. Por cada iteración, agregamos a la lista nuevos_subconjuntos
+            # la unión del subconjunto y el elemento 
+            # (que debemos introducirlo en un conjunto para la operación unión):
+            nuevos_subconjuntos.append(subconjunto|{elemento})
+        
+        # TODO: Agregar los nuevos subconjuntos a la lista potencia:
+        lista_potencia.extend(nuevos_subconjuntos)
 
-def numeros():
-    entrada = {1,2,3}
-    conjunto = list()
-    cont = 1
-    for j in entrada:
-        for i in range(cont):
-            numero = j
-        conjunto.append(set(str(numero)))
-        cont += 1
-    print(conjunto)
-    dos_en_Dos(conjunto)
-
-
-def dos_en_Dos(conjunto:list):
-    entrada = {1,2,3}
-    cont = 1
-    for j in entrada:
-        for i in range(cont):
-            numero = j
-            numero2 = j + 1
-        conjunto.append(set(str(numero)))
-        cont += 1
-    print(conjunto)
-
-
-#def conjunto_potencia(s):
-
+    # TODO: Retornar la lista creada con la lista de todos los subconjuntos
+    return lista_potencia
 
 
 def main():
     borrarPantalla()
-    numeros()
-    # sector1()
-    # conjunto = [set(), set([6]), set([1]), set([4]), set([6, 1]), set([6, 4]), set([1, 4]), set([6, 1, 4])]
-    # s = pedirConjunto()
-    # print('({6, 1, 4})')
-    # print(s)
-    # print(conjunto)
+    conjunto_original = {6, 1, 4}
+    # TODO: Realiza la llamada a la función conjunto_potencia:
+    lista_potencia = conjunto_potencia(conjunto_original)
+    # TODO: Muestra la lista resultante del conjunto potencia en consola:
+    print(lista_potencia)
 
 
 if __name__ == "__main__":

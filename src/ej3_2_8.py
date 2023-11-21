@@ -18,9 +18,13 @@ def traducirFrase(traductor, frase):
     print(' '.join(fraseLista))
 
 
+
+
 def main():
     borrarPantalla()
-    traductor = {"hola":"hello", "adios":"bye", "bien":"good", "nombre":"name", "es": "is", "mi":"my"}
+    palabras = input('Introduce la palabra en español e ingles separadas por ":" y cada traduccion por ",": ')
+    traductor = dict(palabra.split(":") for palabra in palabras.split(","))
+    #traductor = {"hola":"hello", "adios":"bye", "bien":"good", "nombre":"name", "es": "is", "mi":"my"}
     frase = pedirFrase()
     traducirFrase(traductor, frase)
 

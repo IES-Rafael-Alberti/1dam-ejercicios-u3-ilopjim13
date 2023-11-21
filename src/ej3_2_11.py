@@ -21,22 +21,20 @@ def listaDirectorio(directorio:str):
     return lista
 
 
-def diccionario(lista):
+def diccionario(lista:str):
     directorioDict = {}
     for i in range(1,len(lista)):
-        lista4 = lista[0]
-        lista5 = lista4.split(";")
-        lista3 = lista[i]
-        lista2 = lista3.split(";")
-        numerosFloat(lista2)
-        directorioDict[lista2[0]] = {lista5[1]:lista2[1], lista5[2]:lista2[2], lista5[3]:lista2[3],lista5[4]:lista2[4]}
+        lista_campos = lista[0].split(";")
+        valores = lista[i].split(";")
+        numerosFloat(valores)
+        directorioDict[valores[0]] = {lista_campos[1]:valores[1], lista_campos[2]:valores[2], lista_campos[3]:valores[3],lista_campos[4]:valores[4]}
     print(directorioDict)
 
 
-def numerosFloat(lista2):
-    num = lista2[4]
+def numerosFloat(valores):
+    num = valores[4]
     num2 = float(num)
-    lista2[4] = num2
+    valores[4] = num2
 
 
 def main():
