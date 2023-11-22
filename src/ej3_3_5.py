@@ -24,7 +24,7 @@ def conjuntoMultiplos3(numeros):
 
 
 def pares_y_multiplos(conjunto_de_pares: set, conjunto_multiplos_de_tres: set):
-    pares_y_multiplos_de_tres = conjunto_de_pares | conjunto_multiplos_de_tres
+    pares_y_multiplos_de_tres = conjunto_de_pares & conjunto_multiplos_de_tres
     pares_y_multiplos_de_tres = ', '.join(map(str, pares_y_multiplos_de_tres))
     mostrarConjuntos(conjunto_de_pares, conjunto_multiplos_de_tres)
     print(f"La intersección entre los conjuntos pares y multiplos_de_tres es: {pares_y_multiplos_de_tres}")
